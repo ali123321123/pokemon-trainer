@@ -4,7 +4,7 @@
 
 export const environment = {
 production: false,
-pokeAPI: 'https://pokeapi.co/api/v2/pokemon',
+pokeAPI: 'https://pokeapi.co/api/v2/',
 trainerAPI: 'http://localhost:5000'
 };
 

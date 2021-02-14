@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class  NavbarComponent{
-  title = 'pokemon-trainer';
+  constructor(private readonly sessionService: SessionService){
+  }
+
+  get hasActiveSession(): boolean {
+    return this.sessionService.active();
+  }
 }
