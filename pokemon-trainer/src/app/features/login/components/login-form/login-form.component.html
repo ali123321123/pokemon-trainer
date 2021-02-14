@@ -1,30 +1,38 @@
+<div>
+  <img src="../../../../../assets/pokemonlogo.png" alt="pokemonlogo" />
+</div>
 <form [formGroup]="loginForm">
-  <label for="trainer-name" aria-label="Trainer name"> What's your name</label>
-  <input
-    id="trainerName"
-    name="trainername"
-    type="text"
-    formControlName="trainerName"
-    placeholder="Enter your trainer name"
-    required
-    minlength="2"
-    maxlength="20"
-  />
-  <div></div>
-  <button
-    [disabled]="loginForm.invalid || loading"
-    type="button"
-    (click)="onStartClick()"
-  >
-    Login Trainer
-  </button>
-  <button
-    [disabled]="loginForm.invalid || loading"
-    type="button"
-    (click)="onRegisterClick()"
-  >
-    Register Trainer
-  </button>
+  <div class="form-input">
+    <label for="trainer-name" aria-label="Trainer name"> Name</label>
+    <input
+      id="trainerName"
+      name="trainername"
+      type="text"
+      formControlName="trainerName"
+      placeholder="Enter your trainer name"
+      required
+      minlength="2"
+      maxlength="20"
+    />
+  </div>
+  <div class="btn-group">
+    <button
+      [disabled]="loginForm.invalid || loading"
+      type="button"
+      (click)="onStartClick()"
+      class="btn btn-info"
+    >
+      Login Trainer
+    </button>
+    <button
+      [disabled]="loginForm.invalid || loading"
+      type="button"
+      (click)="onRegisterClick()"
+      class="btn btn-warning mt-2"
+    >
+      Register Trainer
+    </button>
+  </div>
 
   <p *ngIf="error">{{ error }}</p>
 </form>

@@ -17,12 +17,35 @@ styles: [
     `label {
         display: block;
         margin-bottom: 1em;
+        margin-right: 1em;
+        margin-left: 1em;
+        color: red;
+       
     }
     input {
         display: block;
         width: 100%;
         margin-bottom: 1em;
+
     }
+    img{
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+    }
+    .form-input{
+      display: flex;
+
+    }
+    .btn-group {
+   display:grid;
+   margin-right:5px;
+}
+    form {
+    width: 300px;
+    margin: 20em auto;
+}
     `
 ]
 })

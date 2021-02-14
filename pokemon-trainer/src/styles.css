@@ -16,4 +16,5 @@ html,
 body {
   color: var(--col-dark);
   font-family: "Courier New", Courier, monospace;
+  background-color: #efe9f4;
 }
