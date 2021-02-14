@@ -1,9 +1,14 @@
 {
-    "trainers": [
-        {
-            "id":"1",
-            "name":"Ali",
-            "pokemon":[]
-        }
-    ]
+  "trainers": [
+    {
+      "id": "1",
+      "name": "Ali",
+      "pokemon": []
+    },
+    {
+      "name": "Aloshi",
+      "pokemon": [],
+      "id": "9sCptFx"
+    }
+  ]
 }

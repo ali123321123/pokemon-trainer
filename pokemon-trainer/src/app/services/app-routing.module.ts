@@ -1,5 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginContainer } from '../features/login/containers/login/login.container';
+import { PokemonDetailContainer } from '../features/pokemon-detail/containers/pokemon-detail/pokemon-detailer';
+import { PokemonContainer } from '../features/pokemon/containers/pokemon/pokemon.container';
+import { TrainerContainer } from '../features/trainer/containers/trainer/trainer';
+import { SessionGuard } from '../guards/session.guard';
+
+
 
 const routes: Routes = [
     {
@@ -13,20 +20,20 @@ const routes: Routes = [
     },
     {
         path:'pokemon',
-        component:PokemonContainer
+        component:PokemonContainer,
+        canActivate: [SessionGuard]
     },
     {
         path:'pokemon/:name',
-        component:PokemonDetailContainer
+        component:PokemonDetailContainer,
+        canActivate: [SessionGuard]
     },
     {
         path:'trainer',
-        component:TrainerContainer
-    },
-    {
-        path: '**',
-        component: NotFoundContainer
+        component:TrainerContainer,
+        canActivate: [SessionGuard]
     }
+   
 ];
 
 @NgModule({

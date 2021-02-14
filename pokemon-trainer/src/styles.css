@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --col-red: #e55934;
+  --col-blue: #75f4f4;
+  --col-light: #efe9f4;
+  --col-dark: #4b3b47;
+}
+
+html,
+body {
+  color: var(--col-dark);
+  font-family: "Courier New", Courier, monospace;
+}
