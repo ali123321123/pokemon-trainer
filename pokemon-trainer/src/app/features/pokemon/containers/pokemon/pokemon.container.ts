@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core"
+import { Pokemon } from "src/app/models/pokemon.model";
 import { PokemonService } from "../../services/pokemon.service";
 
 
@@ -8,22 +9,17 @@ import { PokemonService } from "../../services/pokemon.service";
         templateUrl:'./pokemon.container.html'
     })
     export class PokemonContainer implements OnInit  {
-        pokemon: any[] = [];
-        error:String = ' '
+        
         
 constructor( private readonly pokemonService:PokemonService ){
 
 }
+
+get pokemon() : Pokemon[] {
+    return this.pokemonService.pokemon;
+}
+
     ngOnInit(): void {
-        this.pokemonService.fetchPokemon().subscribe(
-            pokemon => {
-                this.pokemon = pokemon;
-            },
-            error => {
-                this.error = error.message;
-            }
-            
-            
-            );
+        this.pokemonService.fetchPokemon();
     }
     }
