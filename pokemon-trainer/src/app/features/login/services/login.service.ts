@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { environment } from "src/environments/environment"
 import { map } from 'rxjs/operators';
 import { setStorage } from "src/app/utils/storage.utils"
+import { Trainer } from "src/app/models/trainer.model";
 const { trainerAPI } = environment;
 
 @Injectable({
@@ -12,8 +13,8 @@ const { trainerAPI } = environment;
 
 export class LoginService {
     constructor( private readonly http: HttpClient){}
-private setTrainer(trainer: any){
-    setStorage('pk-tr',trainer);
+private setTrainer(trainer: Trainer):void{
+    setStorage<Trainer>('pk-tr',trainer);
 }
     register(name: string):Observable<any>{
         return this.http.post(`${trainerAPI}/trainers`,{
@@ -32,10 +33,10 @@ private setTrainer(trainer: any){
 
    login(trainerName: string): Observable<any>{
         return this.http.
-        get<any>(`${trainerAPI}/trainers?name=${trainerName}`)
+        get<Trainer[]>(`${trainerAPI}/trainers?name=${trainerName}`)
         .pipe(
-            map((response: any[]) => {
-             const  trainer  = response.pop();
+            map((response: Trainer[]) => {
+             const  trainer  = response.pop() as Trainer;
              if(!trainer){
                 throw Error(`The trainer "${trainerName}" does not exist. `) 
              }

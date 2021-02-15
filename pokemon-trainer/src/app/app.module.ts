@@ -11,6 +11,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginFormComponent }from './features/login/components/login-form/login-form.component'
 import {  HttpClientModule } from  '@angular/common/http'
+import { PokemonGridComponent } from './features/pokemon/components/pokemon-grid/pokemon-grid.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {  HttpClientModule } from  '@angular/common/http'
     // Components 
     NavbarComponent,
     AppContainerComponent,
-    LoginFormComponent 
+    LoginFormComponent,
+    PokemonGridComponent
 
   ],
   imports: [

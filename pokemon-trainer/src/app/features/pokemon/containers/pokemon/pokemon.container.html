@@ -1,7 +1,4 @@
-<h1>Pockmon</h1>
-<ul>
-  <li *ngFor="let poke of pokemon" [routerLink]="poke.name">
-    <img [src]="poke.image" alt="poke.name" />
-    {{poke.name}}
-  </li>
-</ul>
+<app-container>
+  <h1>Catch your pokemons</h1>
+  <app-pokemon-grid [pokemon]="pokemon"></app-pokemon-grid>
+</app-container>
